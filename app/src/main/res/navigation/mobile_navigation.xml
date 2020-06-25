@@ -23,5 +23,5 @@
         android:id="@+id/galleryFragment"
         android:name="com.jerry.boozingo.view.activites.ui.gallery.GalleryFragment"
         android:label="fragment_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/booplaces" />
 </navigation>

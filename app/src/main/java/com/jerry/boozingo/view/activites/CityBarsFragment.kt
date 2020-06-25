@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jerry.boozingo.R
 import com.jerry.boozingo.model.Users
 import com.jerry.boozingo.view.util.CustomAdapter
+import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_city_bars.*
 
 class CityBarsFragment : Fragment() {
@@ -134,9 +136,9 @@ class CityBarsFragment : Fragment() {
         }
         adapterBar.updateUserList(users)
 
-        city.setOnClickListener {
-            (activity as MainActivity).openCloseNavigationDrawer()
-        }
+        //city.setOnClickListener {
+         //  (activity as MainActivity).openCloseNavigationDrawer()
+       //}
 
 
     }
