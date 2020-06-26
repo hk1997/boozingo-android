@@ -1,8 +1,9 @@
 package com.jerry.boozingo.model
 
 import com.google.gson.annotations.SerializedName
+import java.util.*
 
-data class BoozPlacesUsers(
+data class BoozePlace(
     @SerializedName("id")
     val placeId: Int?,
 
@@ -73,36 +74,33 @@ data class BoozPlacesUsers(
     val placeCreated: String?,
 
     @SerializedName("updatedAt")
-    val placeUpdated: Int?,
-
+    val placeUpdated: String?,
 
 
     @SerializedName("shopImageId")
-    val placeShopImageId: Int?,
+    val placeShopImageId: String?,
 
 
     @SerializedName("shop_id")
-    val placeShopId: Int?,
+    val placeShopId: String?,
 
 
     @SerializedName("distance")
-    val placeDistance: Long?,
+    val placeDistance: String?,
 
 
     @SerializedName("shopImage")
-    val placeShopImage: Int?,
+    val placeShopImage: String?,
 
     @SerializedName("location")
-    val placeLocation : Location?
+    val placeLocation: Location? // CLASS MADE TO DEAL WITH LOCATION
 
-    ){
-
-}
+)
 
 data class Location(
     @SerializedName("type")
     val locationPoint: String?,
 
     @SerializedName("ccordinates")
-    val locationCordinates: LongArray?
+    val locationCordinates: ArrayList<Double>? //COORDS ARE A [123, 432] HENCE LIST OF DOUBLE
 )

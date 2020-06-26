@@ -6,7 +6,7 @@
     app:startDestination="@id/cityBarsFragment">
     <fragment
         android:id="@+id/cityBarsFragment"
-        android:name="com.jerry.boozingo.view.activites.CityBarsFragment"
+        android:name="com.jerry.boozingo.view.activites.ui.citybars.CityBarsFragment"
         android:label="fragment_city_bars"
         tools:layout="@layout/fragment_city_bars"></fragment>
     <fragment

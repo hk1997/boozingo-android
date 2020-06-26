@@ -7,14 +7,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.jerry.boozingo.R
-import com.jerry.boozingo.model.Users
+import com.jerry.boozingo.model.BoozePlace
 
-class CustomAdapter(val userList: ArrayList<Users>) :
+class CustomAdapter(val boozePlaceList: ArrayList<BoozePlace>) :
     RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
-    fun updateUserList(newUserList: List<Users>) {
-        userList.clear()
-        userList.addAll(newUserList)
+    fun updateUserList(newBoozePlaceList: List<BoozePlace>) {
+        boozePlaceList.clear()
+        boozePlaceList.addAll(newBoozePlaceList)  // data receieved here from fragment
         notifyDataSetChanged()
     }
 
@@ -33,17 +33,25 @@ class CustomAdapter(val userList: ArrayList<Users>) :
     }
 
     override fun getItemCount(): Int {
-        return userList.size
+        return boozePlaceList.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        val user: Users = userList[position]
+        val boozePlace: BoozePlace = boozePlaceList[position]
 
-        holder.bar_name.text = user.name
-        holder.bar_address.text = user.adress
-        holder.bar_time.text = user.time
-        holder.bar_image.setImageResource(user.img)
+        holder.bar_name.text = boozePlace.placeName
+        holder.bar_address.text = boozePlace.placeAdress
+        holder.bar_time.text = boozePlace.placeTime
+        holder.bar_image.setImageResource(R.drawable.barimg)
+
+        /*when(boozePlace.placeType){
+            1->
+            2->
+            3->
+        }
+        if(boozePlace.placeMusic=="yes")
+            holder.musicLogo*/
 
     }
 }
