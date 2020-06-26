@@ -48,27 +48,21 @@ data class BoozePlace(
 
     @SerializedName("music")
     val placeMusic: String?,
-
-
+    
     @SerializedName("payment")
     val placePayment: String?,
-
 
     @SerializedName("ac")
     val placeAc: String?,
 
-
     @SerializedName("rating")
     val placeRating: Int?,
-
 
     @SerializedName("rating_count")
     val placeRatingCount: String?,
 
-
     @SerializedName("type")
     val placeType: Int?,
-
 
     @SerializedName("createdAt")
     val placeCreated: String?,
@@ -76,18 +70,14 @@ data class BoozePlace(
     @SerializedName("updatedAt")
     val placeUpdated: String?,
 
-
     @SerializedName("shopImageId")
     val placeShopImageId: String?,
-
 
     @SerializedName("shop_id")
     val placeShopId: String?,
 
-
     @SerializedName("distance")
     val placeDistance: String?,
-
 
     @SerializedName("shopImage")
     val placeShopImage: String?,

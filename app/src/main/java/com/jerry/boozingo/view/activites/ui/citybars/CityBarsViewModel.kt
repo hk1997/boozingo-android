@@ -26,7 +26,7 @@ class CityBarsViewModel : ViewModel() {
     }
 
     private fun fetchFromRemote() {
-        Log.e("Label 1:", "Calling Server Begins")
+        Log.e("Label 1", "Calling Server Begins")
         disposable.add(
             apiService.getApi().getBoozePlaces(
                 11,
@@ -39,14 +39,14 @@ class CityBarsViewModel : ViewModel() {
                     DisposableSingleObserver<ApiResponse>() { // notice that API Response class me receive hoga sab
                     override fun onSuccess(apiResponse: ApiResponse) {// notice that API Response ka object bananya
 
-                        Log.e("Label 2:", "success tak chala")
+                        Log.e("Label 2", "Success")
                         _boozePlaces.value =
                             apiResponse.data // object ka 'data' which is of type List<boozeplaces>...........WE READ THIS VARIABLE FROM OUR FRAGMENT
 
                     }
 
                     override fun onError(e: Throwable) {
-                        Log.e("Label 2:", "error tak chala")
+                        Log.e("Label 2", "Error")
                         e.printStackTrace()
                     }
 
@@ -56,7 +56,7 @@ class CityBarsViewModel : ViewModel() {
 
     override fun onCleared() {
         super.onCleared()
-        disposable.clear()
+        disposable.clear() //DISPOSABLE KO DESTROY KAR RAHE HAI WHEN WORK IS DONE
     }
 
 

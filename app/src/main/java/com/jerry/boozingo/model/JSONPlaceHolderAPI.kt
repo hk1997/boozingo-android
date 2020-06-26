@@ -7,12 +7,12 @@ import retrofit2.http.POST
 
 interface JSONPlaceHolderAPI {
 
-    @FormUrlEncoded
+    @FormUrlEncoded //ignore just copy paste
     @POST("/boozingo/api/list") //..... THESE WILLL BE THE DIFF DIFF CALLS WE MAKE.
     fun getBoozePlaces(
         @Field("long") long: Long,   //....... THIS IS THE DATA WE ARE SENDING WHILE MAKING THE CALL......AS U CAN SEE IN POSTMAN
         @Field("lati") lati: Long,
         @Field("range") range: Long
-    ): Single<ApiResponse>
+    ): Single<ApiResponse> //this is what we expect to get back from the server ....
 
 }
