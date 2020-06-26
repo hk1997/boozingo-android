@@ -51,5 +51,10 @@ class CityBarsViewModel : ViewModel() {
         )
     }
 
+    override fun onCleared() {
+        super.onCleared()
+        disposable.clear()
+    }
+
 
 }
