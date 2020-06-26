@@ -1,6 +1,7 @@
 package com.jerry.boozingo.view.activites.ui.citybars
 
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.jerry.boozingo.model.ApiResponse
@@ -16,7 +17,9 @@ class CityBarsViewModel : ViewModel() {
     private val apiService = ApiService()
     private val disposable = CompositeDisposable()
 
-    val boozePlaces = MutableLiveData<List<BoozePlace>>()
+    private val _boozePlaces = MutableLiveData<List<BoozePlace>>()
+    val boozePlaces: LiveData<List<BoozePlace>>
+        get() = _boozePlaces
 
     fun refresh() { //fragment came here
         fetchFromRemote()  //called this
@@ -37,7 +40,7 @@ class CityBarsViewModel : ViewModel() {
                     override fun onSuccess(apiResponse: ApiResponse) {// notice that API Response ka object bananya
 
                         Log.e("Label 2:", "success tak chala")
-                        boozePlaces.value =
+                        _boozePlaces.value =
                             apiResponse.data // object ka 'data' which is of type List<boozeplaces>...........WE READ THIS VARIABLE FROM OUR FRAGMENT
 
                     }
