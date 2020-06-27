@@ -16,9 +16,5 @@
             android:id="@+id/slideshowFragment"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
-        <item
-            android:id="@+id/cityBarsFragment"
-            android:icon="@drawable/chair"
-            android:title="City Bars" />
     </group>
 </menu>

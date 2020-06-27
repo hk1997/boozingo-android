@@ -1,5 +1,6 @@
 package com.jerry.boozingo.view.activites
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -16,6 +17,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import com.jerry.boozingo.R
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.booplaces.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,8 +41,7 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.homeFragment,
                 R.id.galleryFragment,
-                R.id.slideshowFragment,
-                R.id.cityBarsFragment
+                R.id.slideshowFragment
             ),
             drawerLayout
         )

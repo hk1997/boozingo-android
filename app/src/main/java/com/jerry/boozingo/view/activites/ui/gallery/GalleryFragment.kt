@@ -1,20 +1,36 @@
 package com.jerry.boozingo.view.activites.ui.gallery
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.HorizontalScrollView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jerry.boozingo.R
-import com.jerry.boozingo.model.Users
+import com.jerry.boozingo.model.*
+import com.jerry.boozingo.view.activites.MainActivity
+import com.jerry.boozingo.view.activites.ui.citybars.CityBarsViewModel
 import com.jerry.boozingo.view.util.BarAdapter
+import com.jerry.boozingo.view.util.CustomAdapter
 import kotlinx.android.synthetic.main.booplaces.*
+import kotlinx.android.synthetic.main.fragment_city_bars.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import java.util.*
 
-class GalleryFragment : Fragment() {
+class GalleryFragment : androidx.fragment.app.Fragment() {
 
     private val adapterBar = BarAdapter(arrayListOf())
+    private lateinit var viewModel: GalleryViewModel
 
 
     override fun onCreateView(
@@ -29,105 +45,16 @@ class GalleryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        barsviewall.setOnClickListener {
+            val intent = Intent(activity, MainActivity::class.java)
+            startActivity(intent)
+        }
 
-        val users = ArrayList<Users>()
-        val image: Int = R.drawable.barimg
-        users.add(
-            Users(
-                "Lucknow Night's club",
-                "vibhuti khand,gomtinagar,lucknow",
-                image,
-                "12am-12pm"
-            )
-        )
-        users.add(
-            Users(
-                "Bombay Club",
-                "vibhuti khand,gomtinagar,lucknow",
-                image,
-                "12am-12pm"
-            )
-        )
-        users.add(
-            Users(
-                "Midnight Bar",
-                "vibhuti khand,gomtinagar,lucknow",
-                image,
-                "12am-12pm"
-            )
-        )
-        users.add(
-            Users(
-                "Lucknow Night's club",
-                "vibhuti khand,gomtinagar,lucknow",
-                image,
-                "12am-12pm"
-            )
-        )
-        users.add(
-            Users(
-                "Lucknow Night's club",
-                "vibhuti khand,gomtinagar,lucknow",
-                image,
-                "12am-12pm"
-            )
-        )
-        users.add(
-            Users(
-                "Bombay Club",
-                "vibhuti khand,gomtinagar,lucknow",
-                image,
-                "12am-12pm"
-            )
-        )
-        users.add(
-            Users(
-                "Midnight Bar",
-                "vibhuti khand,gomtinagar,lucknow",
-                image,
-                "12am-12pm"
-            )
-        )
-        users.add(
-            Users(
-                "Lucknow Night's club",
-                "vibhuti khand,gomtinagar,lucknow",
-                image,
-                "12am-12pm"
-            )
-        )
-        users.add(
-            Users(
-                "Lucknow Night's club",
-                "vibhuti khand,gomtinagar,lucknow",
-                image,
-                "12am-12pm"
-            )
-        )
-        users.add(
-            Users(
-                "Bombay Club",
-                "vibhuti khand,gomtinagar,lucknow",
-                image,
-                "12am-12pm"
-            )
-        )
-        users.add(
-            Users(
-                "Midnight Bar",
-                "vibhuti khand,gomtinagar,lucknow",
-                image,
-                "12am-12pm"
-            )
-        )
-        users.add(
-            Users(
-                "Lucknow Night's club",
-                "vibhuti khand,gomtinagar,lucknow",
-                image,
-                "12am-12pm"
-            )
-        )
+
+        viewModel = ViewModelProviders.of(this)
+            .get(GalleryViewModel::class.java)  // viewmodel bana raha hu
+        viewModel.refresh()  // API se server call kara
+
 
 
 
@@ -143,12 +70,22 @@ class GalleryFragment : Fragment() {
             layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
             adapter = adapterBar
         }
-        adapterBar.updateUserList(users)
 
-        //city.setOnClickListener {
-        //  (activity as MainActivity).openCloseNavigationDrawer()
-        //}
+        observeViewModel() // viewmodel ko observe kara
+    }
 
+    fun observeViewModel() {
+        viewModel.boozePlaces.observe(viewLifecycleOwner, Observer { boozePlaces ->
+            boozePlaces?.let {
+                recycler1.visibility = View.VISIBLE
+                Log.d("manik","${boozePlaces}")
+
+                 adapterBar.updateUserList(boozePlaces)
+
+
+                //if viewmodel has received data then sending data to adapter
+            }
+        })
 
     }
 

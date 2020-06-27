@@ -1,15 +1,19 @@
 package com.jerry.boozingo.view.activites.ui.citybars
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jerry.boozingo.R
+import com.jerry.boozingo.view.activites.MainActivity
 import com.jerry.boozingo.view.util.CustomAdapter
+import kotlinx.android.synthetic.main.booplaces.*
 import kotlinx.android.synthetic.main.fragment_city_bars.*
 
 class CityBarsFragment : Fragment() {
@@ -27,6 +31,8 @@ class CityBarsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
 
         viewModel = ViewModelProviders.of(this)
             .get(CityBarsViewModel::class.java)  // viewmodel bana raha hu
