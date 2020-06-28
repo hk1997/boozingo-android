@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     app:startDestination="@id/galleryFragment">
-
+    <fragment
+        android:id="@+id/cityBarsFragment"
+        android:name="com.jerry.boozingo.view.activites.ui.citybars.CityBarsFragment"
+        android:label="fragment_city_bars"
+        tools:layout="@layout/fragment_city_bars"></fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.jerry.boozingo.view.activites.ui.home.HomeFragment"
@@ -19,5 +23,9 @@
         android:id="@+id/galleryFragment"
         android:name="com.jerry.boozingo.view.activites.ui.gallery.GalleryFragment"
         android:label="fragment_gallery"
-        tools:layout="@layout/booplaces" />
+        tools:layout="@layout/booplaces" >
+        <action
+            android:id="@+id/action_galleryFragment_to_cityBarsFragment"
+            app:destination="@id/cityBarsFragment" />
+    </fragment>
 </navigation>

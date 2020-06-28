@@ -6,10 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.afollestad.materialdialogs.MaterialDialog
+import com.afollestad.materialdialogs.customview.customView
+import com.google.android.material.dialog.MaterialDialogs
 import com.jerry.boozingo.R
 import com.jerry.boozingo.view.activites.MainActivity
 import com.jerry.boozingo.view.util.CustomAdapter
@@ -47,6 +53,8 @@ class CityBarsFragment : Fragment() {
         observeViewModel() // viewmodel ko observe kara
     }
 
+
+
     fun observeViewModel() {
         viewModel.boozePlaces.observe(viewLifecycleOwner, Observer { boozePlaces ->
             boozePlaces?.let {
@@ -54,7 +62,9 @@ class CityBarsFragment : Fragment() {
                 adapterBar.updateUserList(boozePlaces) //if viewmodel has received data then sending data to adapter
             }
         })
-
     }
-
 }
+
+
+
+

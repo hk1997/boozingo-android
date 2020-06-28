@@ -41,7 +41,8 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.homeFragment,
                 R.id.galleryFragment,
-                R.id.slideshowFragment
+                R.id.slideshowFragment,
+                R.id.cityBarsFragment
             ),
             drawerLayout
         )
