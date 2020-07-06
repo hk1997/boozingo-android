@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jerry.boozingo.R
 import com.jerry.boozingo.view.util.CustomAdapter
@@ -28,7 +28,7 @@ class CityBarsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProviders.of(this)
+        viewModel = ViewModelProvider(this)
             .get(CityBarsViewModel::class.java)  // viewmodel bana raha hu
         viewModel.refresh()  // API se server call kara
 

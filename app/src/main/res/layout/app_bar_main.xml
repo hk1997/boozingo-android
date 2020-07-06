@@ -11,46 +11,35 @@
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
+        <com.google.android.material.appbar.SubtitleCollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
-            app:title="World of Boozinga Start from here"
+            app:collapsedSubtitleTextAppearance="@style/BoozingaSubtitle"
             app:collapsedTitleGravity="left"
-            app:collapsedTitleTextAppearance="@style/TextAppearance.AppCompat.Medium"
-            app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:background="@drawable/clip">
+            app:collapsedTitleTextAppearance="@style/BoozingaTitle"
+            app:expandedSubtitleTextAppearance="@style/BoozingaSubtitle"
+            app:expandedTitleTextAppearance="@style/BoozingaTitle"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:subtitle="Lucknow:"
+            app:title="World of Boozinga Start from here">
 
 
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
                 android:src="@drawable/clip" />
-            <TextView
-                android:id="@+id/city"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Lucknow >"
-                android:textSize="15sp"
-                android:layout_gravity="bottom"
-                android:layout_marginTop="10dp"
-                android:textStyle="bold"
-                android:layout_marginBottom="10dp"
-                android:textColor="#FFB703"
-                android:layout_marginStart="60dp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
-            
+
+
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
-                app:layout_collapseMode="pin"
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
-                app:popupTheme="@style/AppTheme.PopupOverlay"/>
-            
-            
-            
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
+                android:layout_height="?actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+
+        </com.google.android.material.appbar.SubtitleCollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 

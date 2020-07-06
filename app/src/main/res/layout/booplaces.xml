@@ -19,19 +19,18 @@
         tools:context=".view.activites.ui.gallery.GalleryFragment">
 
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:weightSum="10"
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/cityBarsList"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1.5"
-                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -39,15 +38,16 @@
                     android:layout_height="wrap_content"
                     android:text="Popular Bars in city"
                     android:textColor="#000"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="View All"
                     android:textColor="#FFA000"
                     android:layout_marginStart="10dp"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textStyle="bold"/>
 
             </LinearLayout>
@@ -55,40 +55,42 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler1"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="8.5"
-                android:scrollbars="horizontal"/>
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cityBarsList"
+                android:scrollbars="horizontal" />
 
-        </LinearLayout>
-        <LinearLayout
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:weightSum="10"
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/cityLoungeList"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1.5"
-                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Popular Bars in city"
+                    android:text="Popular Lounges in city"
                     android:textColor="#000"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="View All"
                     android:textColor="#FFA000"
                     android:layout_marginStart="10dp"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textStyle="bold"/>
 
             </LinearLayout>
@@ -96,40 +98,42 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler2"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="8.5"
-                android:scrollbars="horizontal"/>
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cityLoungeList"
+                android:scrollbars="horizontal" />
 
-        </LinearLayout>
-        <LinearLayout
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:weightSum="10"
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/cityClubList"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1.5"
-                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Popular Bars in city"
+                    android:text="Popular Night Clubs in city"
                     android:textColor="#000"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="View All"
                     android:textColor="#FFA000"
                     android:layout_marginStart="10dp"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textStyle="bold"/>
 
             </LinearLayout>
@@ -137,11 +141,11 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler3"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="8.5"
-                android:scrollbars="horizontal"/>
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cityClubList"
+                android:scrollbars="horizontal" />
 
-        </LinearLayout>
+        </RelativeLayout>
 
     </LinearLayout>
         </androidx.core.widget.NestedScrollView>

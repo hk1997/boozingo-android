@@ -5,7 +5,6 @@ import android.util.Log
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -15,7 +14,6 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import com.jerry.boozingo.R
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -49,14 +47,6 @@ class MainActivity : AppCompatActivity() {
 
         Log.e("Main activity ", "code end")
 
-    }
-
-    fun openCloseNavigationDrawer() {
-        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
-            drawer_layout.closeDrawer(GravityCompat.START)
-        } else {
-            drawer_layout.openDrawer(GravityCompat.START)
-        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
