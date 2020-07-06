@@ -103,7 +103,7 @@
                     android:layout_height="wrap_content"
                     android:text="Vibhuti khand,Gomti Nagar,Lucknow"
                     android:textColor="#000"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -126,7 +126,7 @@
                     android:layout_gravity="center_vertical"
                     android:text="5kms"
                     android:textColor="#000"
-                    android:textSize="11sp" />
+                    android:textSize="12sp" />
 
                 <ImageView
                     android:layout_width="18dp"
@@ -143,12 +143,11 @@
                     android:layout_marginStart="3dp"
                     android:text="12am-12pm"
                     android:textColor="#000"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
         </RelativeLayout>
     </RelativeLayout>
+
 </androidx.cardview.widget.CardView>
-
-

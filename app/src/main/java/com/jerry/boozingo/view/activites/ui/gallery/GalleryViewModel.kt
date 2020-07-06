@@ -26,7 +26,7 @@ class GalleryViewModel : ViewModel() {
     }
 
     private fun fetchFromRemote() {
-        Log.e("Label 1", "Calling Server Begins")
+        Log.e("Label 1 Gallery ", "Calling Server Begins")
         disposable.add(
             apiService.getApi().getBoozePlaces(
                 11,
@@ -39,7 +39,7 @@ class GalleryViewModel : ViewModel() {
                     DisposableSingleObserver<ApiResponse>() { // notice that API Response class me receive hoga sab
                     override fun onSuccess(apiResponse: ApiResponse) {// notice that API Response ka object bananya
 
-                        Log.e("manik", "${apiResponse.data}")
+                        Log.e("manik", "Success data= ${apiResponse.data}")
                         _boozePlaces.value =
                             apiResponse.data
                     }

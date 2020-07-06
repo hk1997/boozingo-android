@@ -26,7 +26,7 @@ class CityBarsViewModel : ViewModel() {
     }
 
     private fun fetchFromRemote() {
-        Log.e("Label 1", "Calling Server Begins")
+        Log.e("Label 1 CityBarVM ", "Calling Server Begins")
         disposable.add(
             apiService.getApi().getBoozePlaces(
                 11,
@@ -39,7 +39,7 @@ class CityBarsViewModel : ViewModel() {
                     DisposableSingleObserver<ApiResponse>() { // notice that API Response class me receive hoga sab
                     override fun onSuccess(apiResponse: ApiResponse) {// notice that API Response ka object bananya
 
-                        Log.e("Label 2", "Success")
+                        Log.e("Label 2 ", "Success data= ${apiResponse.data}")
                         _boozePlaces.value =
                             apiResponse.data // object ka 'data' which is of type List<boozeplaces>...........WE READ THIS VARIABLE FROM OUR FRAGMENT
 

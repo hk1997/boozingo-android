@@ -3,14 +3,15 @@ package com.jerry.boozingo.view.util
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.jerry.boozingo.R
+import com.jerry.boozingo.databinding.BarinLayoutBinding
 import com.jerry.boozingo.model.BoozePlace
+import com.jerry.boozingo.view.BoozePlaceClickListener
 
 class CustomAdapter(val boozePlaceList: ArrayList<BoozePlace>) :
-    RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+    RecyclerView.Adapter<CustomAdapter.BoozePlaceViewHolder>(), BoozePlaceClickListener {
 
     fun updateUserList(newBoozePlaceList: List<BoozePlace>) {
         boozePlaceList.clear()
@@ -18,40 +19,32 @@ class CustomAdapter(val boozePlaceList: ArrayList<BoozePlace>) :
         notifyDataSetChanged()
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class BoozePlaceViewHolder(var view: BarinLayoutBinding) : RecyclerView.ViewHolder(view.root)
 
-        val bar_name = itemView.findViewById<TextView>(R.id.bar_name)
-        val bar_address = itemView.findViewById<TextView>(R.id.bar_addr)
-        val bar_time = itemView.findViewById<TextView>(R.id.bar_tym)
-        val bar_image = itemView.findViewById<ImageView>(R.id.image_bar)
-
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BoozePlaceViewHolder {
+        val inflater = LayoutInflater.from(parent.context)
+        val v = DataBindingUtil.inflate<BarinLayoutBinding>(
+            inflater,
+            R.layout.barin_layout,
+            parent,
+            false
+        )
+        return BoozePlaceViewHolder(v)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.barin_layout, parent, false)
-        return ViewHolder(v)
+    override fun getItemCount() = boozePlaceList.size
+
+    override fun onBindViewHolder(holder: BoozePlaceViewHolder, position: Int) {
+
+        holder.view.boozePlace = boozePlaceList[position]
+        holder.view.listener = this
     }
 
-    override fun getItemCount(): Int {
-        return boozePlaceList.size
+    override fun onBoozePlaceClicked(v: View) {
+        //val uuid = v.dogId.text.toString().toInt()
+        //val action = ListFragmentDirections.actionDetailFragment()
+        // action.dogUuid = uuid
+        // Navigation.findNavController(v).navigate(action)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
-        val boozePlace: BoozePlace = boozePlaceList[position]
-
-        holder.bar_name.text = boozePlace.placeName
-        holder.bar_address.text = boozePlace.placeAdress
-        holder.bar_time.text = boozePlace.placeTime
-        holder.bar_image.setImageResource(R.drawable.barimg)
-
-        /*when(boozePlace.placeType){
-            1->
-            2->
-            3->
-        }
-        if(boozePlace.placeMusic=="yes")
-            holder.musicLogo*/
-
-    }
 }
