@@ -1,8 +1,10 @@
 package com.jerry.boozingo.model
 
 import io.reactivex.Single
+import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface JSONPlaceHolderAPI {
@@ -14,5 +16,6 @@ interface JSONPlaceHolderAPI {
         @Field("lati") lati: Long,
         @Field("range") range: Long
     ): Single<ApiResponse> //this is what we expect to get back from the server ....
+
 
 }
