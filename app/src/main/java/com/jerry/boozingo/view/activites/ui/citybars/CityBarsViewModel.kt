@@ -31,7 +31,7 @@ class CityBarsViewModel : ViewModel() {
             apiService.getApi().getBoozePlaces(
                 11,
                 12,
-                120000
+                12000
             )  //important line ...... getApi from ApiService, getBoozePlaces from JSONPlaceHolderApi and the data is what we need to send
                 .subscribeOn(Schedulers.newThread()) //ignore (just copy paste)
                 .observeOn(AndroidSchedulers.mainThread()) //ignore (just copy paste)

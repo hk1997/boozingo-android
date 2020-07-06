@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -40,9 +40,7 @@ class GalleryFragment : Fragment(), View.OnClickListener {
         view.findViewById<TextView>(R.id.barsviewall).setOnClickListener(this)
 
 
-
-
-        viewModel = ViewModelProvider(this)
+        viewModel = ViewModelProviders.of(this)
             .get(GalleryViewModel::class.java)  // viewmodel bana raha hu
         viewModel.refresh()  // API se server call kara
 

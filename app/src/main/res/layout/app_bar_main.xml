@@ -19,7 +19,7 @@
             app:collapsedTitleTextAppearance="@style/BoozingaTitle"
             app:expandedSubtitleTextAppearance="@style/BoozingaSubtitle"
             app:expandedTitleTextAppearance="@style/BoozingaTitle"
-            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:subtitle="Lucknow:"
             app:title="World of Boozinga Start from here">
 

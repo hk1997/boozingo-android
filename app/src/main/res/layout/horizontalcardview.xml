@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -23,7 +23,7 @@
         android:layout_margin="8dp"
         android:elevation="20dp"
         android:onClick="@{listener::onBoozePlaceClicked}"
-        card_view:cardCornerRadius="12dp">
+        app:cardCornerRadius="12dp">
 
         <RelativeLayout
             android:layout_width="wrap_content"

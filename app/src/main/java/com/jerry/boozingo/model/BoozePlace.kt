@@ -5,7 +5,7 @@ import java.util.*
 
 data class BoozePlace(
     @SerializedName("id")
-    val placeId: Int?,
+    val placeId: String?,
 
     @SerializedName("name")
     val placeName: String?,
@@ -17,7 +17,7 @@ data class BoozePlace(
     val placeDetails: String?,
 
     @SerializedName("city_id")
-    val cityId: Int?,
+    val cityId: String?,
 
     @SerializedName("cost")
     val placeCost: String?,
@@ -48,7 +48,7 @@ data class BoozePlace(
 
     @SerializedName("music")
     val placeMusic: String?,
-    
+
     @SerializedName("payment")
     val placePayment: String?,
 
@@ -56,13 +56,13 @@ data class BoozePlace(
     val placeAc: String?,
 
     @SerializedName("rating")
-    val placeRating: Int?,
+    val placeRating: String?,
 
     @SerializedName("rating_count")
     val placeRatingCount: String?,
 
     @SerializedName("type")
-    val placeType: Int?,
+    val placeType: String?,
 
     @SerializedName("createdAt")
     val placeCreated: String?,
@@ -79,12 +79,35 @@ data class BoozePlace(
     @SerializedName("distance")
     val placeDistance: String?,
 
-    @SerializedName("shopImage")
-    val placeShopImage: String?,
+    @SerializedName("shopImages")
+    val placeShopImage: List<ShopImage>?,
 
     @SerializedName("location")
     val placeLocation: Location? // CLASS MADE TO DEAL WITH LOCATION
 
+)
+
+data class ShopImage(
+    @SerializedName("id")
+    val id: String?,
+
+    @SerializedName("shopID")
+    val shopID: String?,
+
+    @SerializedName("imageURL")
+    val imageURL: String?,
+
+    @SerializedName("isActive")
+    val isActive: String?,
+
+    @SerializedName("isHighlighted")
+    val isHighlighted: String?,
+
+    @SerializedName("createdAt")
+    val createdAt: String?,
+
+    @SerializedName("updatedAt")
+    val updatedAt: String?
 )
 
 data class Location(

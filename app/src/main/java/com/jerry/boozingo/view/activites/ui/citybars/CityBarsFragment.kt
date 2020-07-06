@@ -41,7 +41,7 @@ class CityBarsFragment : Fragment() {
         observeViewModel() // viewmodel ko observe kara
     }
 
-    fun observeViewModel() {
+    private fun observeViewModel() {
         viewModel.boozePlaces.observe(viewLifecycleOwner, Observer { boozePlaces ->
             boozePlaces?.let {
                 recyclerViewBar.visibility = View.VISIBLE
