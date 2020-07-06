@@ -32,19 +32,19 @@ class CustomAdapter(val boozePlaceList: ArrayList<BoozePlace>) :
         return BoozePlaceViewHolder(v)
     }
 
-    override fun getItemCount() = boozePlaceList.size
+    override fun getItemCount() = boozePlaceList.size //inline function
 
     override fun onBindViewHolder(holder: BoozePlaceViewHolder, position: Int) {
 
-        holder.view.boozePlace = boozePlaceList[position]
+        holder.view.boozePlace = boozePlaceList[position]  //data binding added
         holder.view.listener = this
     }
 
     override fun onBoozePlaceClicked(v: View) {
         //val uuid = v.dogId.text.toString().toInt()
         //val action = ListFragmentDirections.actionDetailFragment()
-        // action.dogUuid = uuid
-        // Navigation.findNavController(v).navigate(action)
+        //action.dogUuid = uuid
+        //Navigation.findNavController(v).navigate(action)
     }
 
 }
